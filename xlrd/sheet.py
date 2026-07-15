@@ -707,7 +707,7 @@ class Sheet(BaseObject):
             values_row[colx] = value
             if fmt_info:
                 fmt_row[colx] = xf_index
-        except:
+        except Exception:
             print("put_cell", rowx, colx, file=self.logfile)
             raise
 
@@ -776,10 +776,10 @@ class Sheet(BaseObject):
                 self._cell_values[rowx][colx] = value
                 if self.formatting_info:
                     self._cell_xf_indexes[rowx][colx] = xf_index
-            except:
+            except Exception:
                 print("put_cell", rowx, colx, file=self.logfile)
                 raise
-        except:
+        except Exception:
             print("put_cell", rowx, colx, file=self.logfile)
             raise
 
