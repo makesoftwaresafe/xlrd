@@ -115,7 +115,7 @@ def open_workbook_xls(filename=None,
             )
         t2 = perf_counter()
         bk.load_time_stage_2 = t2 - t1
-    except:
+    except Exception:
         bk.release_resources()
         raise
     # normal exit
@@ -1424,7 +1424,7 @@ def unpack_SST_table(datatab, nstrings):
                 # if DEBUG: print "SST U16: nchars=%d pos=%d rawstrg=%r" % (nchars, pos, rawstrg)
                 try:
                     accstrg += unicode(rawstrg, "utf_16_le")
-                except:
+                except Exception:
                     # print "SST U16: nchars=%d pos=%d rawstrg=%r" % (nchars, pos, rawstrg)
                     # Probable cause: dodgy data e.g. unfinished surrogate pair.
                     # E.g. file unicode2.xls in pyExcelerator's examples has cells containing
